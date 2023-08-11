@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wang.mapper.ProjectDetailitemRelationshipMapper">
+
+    <resultMap id="BaseResultMap" type="org.wang.model.ProjectDetailitemRelationship">
+            <id property="ID" column="ID" jdbcType="VARCHAR"/>
+            <result property="project_ID" column="Project_ID" jdbcType="VARCHAR"/>
+            <result property="detail_item_ID" column="Detail_item_ID" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,Project_ID,Detail_item_ID
+    </sql>
+</mapper>

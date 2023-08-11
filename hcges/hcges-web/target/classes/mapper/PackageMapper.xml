@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wang.mapper.PackageMapper">
+
+    <resultMap id="BaseResultMap" type="org.wang.model.Package">
+            <id property="ID" column="ID" jdbcType="VARCHAR"/>
+            <result property="package_name" column="Package_name" jdbcType="VARCHAR"/>
+            <result property="price" column="Price" jdbcType="FLOAT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,Package_name,Price
+    </sql>
+
+    <select id="selectPackage" resultType="org.wang.model.Package">
+        SELECT ID, Package_name, Price
+        FROM package
+        WHERE
+        <if test="packageName != null and packageName != ''">
+            Package_name LIKE CONCAT('%', #{packageName}, '%') AND
+        </if>
+        <if test="minPrice != null">
+            Price >= #{minPrice} AND
+        </if>
+        <if test="maxPrice != null">
+            Price &lt;= #{maxPrice} AND
+        </if>
+        1=1
+    </select>
+</mapper>

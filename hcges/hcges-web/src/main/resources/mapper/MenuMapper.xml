@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wang.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="org.wang.model.Menu">
+            <id property="ID" column="ID" jdbcType="VARCHAR"/>
+            <result property="menu_name" column="Menu_name" jdbcType="VARCHAR"/>
+            <result property="parent_menu_ID" column="Parent_menu_ID" jdbcType="VARCHAR"/>
+            <result property="menu_icon" column="Menu_icon" jdbcType="VARCHAR"/>
+            <result property="menu_link" column="Menu_link" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,Menu_name,Parent_menu_ID,
+        Menu_icon,Menu_link
+    </sql>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wang.mapper.RoleMenuMapper">
+
+    <resultMap id="BaseResultMap" type="org.wang.model.RoleMenu">
+            <id property="ID" column="ID" jdbcType="VARCHAR"/>
+            <result property="role_ID" column="Role_ID" jdbcType="VARCHAR"/>
+            <result property="menu_PID" column="Menu_PID" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,Role_ID,Menu_PID
+    </sql>
+</mapper>
