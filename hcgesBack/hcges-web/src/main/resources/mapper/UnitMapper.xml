@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.wang.mapper.UnitMapper">
+
+    <resultMap id="BaseResultMap" type="org.wang.model.Unit">
+            <id property="ID" column="ID" jdbcType="VARCHAR"/>
+            <result property="unit_name" column="Unit_name" jdbcType="VARCHAR"/>
+            <result property="contact_person" column="Contact_person" jdbcType="VARCHAR"/>
+            <result property="phone" column="Phone" jdbcType="VARCHAR"/>
+            <result property="account_balance" column="Account_balance" jdbcType="FLOAT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,Unit_name,Contact_person,
+        Phone,Account_balance
+    </sql>
+    
+    <select id="selectUnit" resultType="org.wang.model.Unit">
+        select *
+        from unit;
+    </select>
+</mapper>
